@@ -72,3 +72,30 @@
           const subTasks = [];
           for (let j = 0; j < subTaskItems.length; j++) {
             const subTaskItem = subTaskItems[j];
+           // Select elements
+const newTaskInput = document.getElementById("new-task");
+const addTaskButton = document.getElementById("add-task");
+const taskList = document.getElementById("task-list");
+
+// Load saved tasks from local storage
+const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+// Render saved tasks
+savedTasks.forEach((task) => {
+// Create new list item
+const listItem = document.createElement("li");
+
+// Create task title
+const taskTitle = document.createElement("div");
+taskTitle.className = "task-title";
+
+const taskText = document.createTextNode(task.title);
+taskTitle.appendChild(taskText);
+
+const deleteButton = document.createElement("button");
+deleteButton.innerHTML = "Delete";
+deleteButton.addEventListener("click", deleteTask);
+taskTitle.appendChild(deleteButton);
+
+// Add task title to list item
+listItem.appendChild(taskTitle);
