@@ -99,3 +99,6 @@ taskTitle.appendChild(deleteButton);
 
 // Add task title to list item
 listItem.appendChild(taskTitle);
+ // Create sub-tasks
+const subTasks = document.createElement("ul");
+subTasks.className = "sub-tasks";
