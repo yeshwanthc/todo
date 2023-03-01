@@ -106,3 +106,16 @@ subTasks.className = "sub-tasks";
 const newSubTaskInput = document.createElement("input");
 newSubTaskInput.type = "text";
 newSubTaskInput.placeholder = "Add sub-task...";
+ 
+ const addSubTaskButton = document.createElement("button");
+addSubTaskButton.innerHTML = "Add";
+addSubTaskButton.addEventListener("click", addSubTask);
+
+// Add sub-task input and button to sub-tasks
+subTasks.appendChild(newSubTaskInput);
+subTasks.appendChild(addSubTaskButton);
+
+// Render saved sub-tasks
+task.subTasks.forEach((subTask) => {
+// Create new sub-task item
+const subTaskItem = document.createElement("li");
