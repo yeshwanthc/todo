@@ -102,3 +102,7 @@ listItem.appendChild(taskTitle);
  // Create sub-tasks
 const subTasks = document.createElement("ul");
 subTasks.className = "sub-tasks";
+ // Add sub-task input and button
+const newSubTaskInput = document.createElement("input");
+newSubTaskInput.type = "text";
+newSubTaskInput.placeholder = "Add sub-task...";
